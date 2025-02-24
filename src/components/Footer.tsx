@@ -1,14 +1,16 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="text-gray-50 bg-red-900 text-center mt-4 pb-10 sticky bottom-0">
       <div className="flex gap-10 justify-center items-center ">
         <div>
-          <a
+          <Link
             href="/"
             className="underline underline-offset-4 hover:no-underline"
           >
             Home
-          </a>
+          </Link>
         </div>
         <div>
           <a
