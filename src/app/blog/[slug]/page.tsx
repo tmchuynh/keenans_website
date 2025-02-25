@@ -20,8 +20,13 @@ const blogPosts = [
   }
 ];
 
+interface BlogPostProps {
+  params: {
+    slug: string;
+  };
+}
 
-export default function BlogPost({params:string}) {
+export default function BlogPost({ params }: BlogPostProps) {
   const post = blogPosts.find(post => post.slug === params.slug);
 
   if (!post) return notFound();
