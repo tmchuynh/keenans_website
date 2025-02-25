@@ -110,13 +110,13 @@ export default function Example() {
                       />
                     </div>
                     <div className="flex-auto">
-                      <a
+                      <Link
                         href={item.href}
                         className="block font-semibold text-red-700 tracking-wide"
                       >
                         {item.name}
                         <span className="absolute inset-0" />
-                      </a>
+                      </Link>
                       <p className="mt-1 text-gray-600">{item.description}</p>
                     </div>
                   </div>
@@ -125,20 +125,20 @@ export default function Example() {
             </PopoverPanel>
           </Popover>
 
-          <a href="/about" className="text-sm/6 font-semibold">
+          <Link href="/about" className="text-sm/6 font-semibold">
             About
-          </a>
-          <a href="/blog" className="text-sm/6 font-semibold">
+          </Link>
+          <Link href="/blog" className="text-sm/6 font-semibold">
             Blog
-          </a>
-          <a href="/contact" className="text-sm/6 font-semibold">
+          </Link>
+          <Link href="/contact" className="text-sm/6 font-semibold">
             Contact
-          </a>
+          </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="/login" className="text-sm/6 font-semibold">
+          <Link href="/login" className="text-sm/6 font-semibold">
             Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          </Link>
         </div>
       </nav>
       <Dialog
@@ -186,32 +186,32 @@ export default function Example() {
                     ))}
                   </DisclosurePanel>
                 </Disclosure>
-                <a
+                <Link
                   href="/about"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50"
                 >
                   About
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/blog"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50"
                 >
                   Blog
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/contact"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50"
                 >
                   Contact
-                </a>
+                </Link>
               </div>
               <div className="py-6">
-                <a
+                <Link
                   href="/login"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold hover:bg-gray-50"
                 >
                   Log in
-                </a>
+                </Link>
               </div>
             </div>
           </div>
