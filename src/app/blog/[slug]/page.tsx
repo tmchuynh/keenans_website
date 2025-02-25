@@ -20,27 +20,8 @@ const blogPosts = [
   }
 ];
 
-type BlogPageProps = {
-  params: { slug: string };
-};
 
-export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
-  const post = blogPosts.find(post => post.slug === params.slug);
-  
-  if (!post) {
-    return {
-      title: "Blog Not Found",
-      description: "The requested blog post does not exist."
-    };
-  }
-
-  return {
-    title: post.title,
-    description: post.description
-  };
-}
-
-export default function BlogPost({ params }: BlogPageProps) {
+export default function BlogPost({params}) {
   const post = blogPosts.find(post => post.slug === params.slug);
 
   if (!post) return notFound();
