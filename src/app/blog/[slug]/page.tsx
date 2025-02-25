@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import {useParams, useRouter} from "next/navigation";
 
-const blogPosts = [
+export const blogPosts = [
   {
     slug: "introduction-to-nextjs",
     title: "Introduction to Next.js",
@@ -20,14 +21,9 @@ const blogPosts = [
   }
 ];
 
-interface BlogPostProps {
-  params: { slug: string };
-}
-
-export default async function BlogPost({ params }: BlogPostProps) {
-  // Find the post based on the dynamic slug
-  const post = blogPosts.find((post) => post.slug === params.slug);
-
+export default function BlogPost() {
+ const {slug} = useParams() as {slug: string};
+  const router = useRouter();
   // Return not found if no post is found
   if (!post) return notFound();
 
