@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
 const blogPosts = [
   {
@@ -19,10 +20,19 @@ const blogPosts = [
   }
 ];
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+type BlogPageProps = {
+  params: { slug: string };
+};
+
+export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
   const post = blogPosts.find(post => post.slug === params.slug);
   
-  if (!post) return { title: "Blog Not Found", description: "The requested blog post does not exist." };
+  if (!post) {
+    return {
+      title: "Blog Not Found",
+      description: "The requested blog post does not exist."
+    };
+  }
 
   return {
     title: post.title,
@@ -30,7 +40,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
+export default function BlogPost({ params }: BlogPageProps) {
   const post = blogPosts.find(post => post.slug === params.slug);
 
   if (!post) return notFound();
