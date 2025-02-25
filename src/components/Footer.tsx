@@ -13,28 +13,28 @@ export default function Footer() {
           </Link>
         </div>
         <div>
-          <a
+          <Link
             href="/about"
             className="underline underline-offset-4 hover:no-underline"
           >
             About
-          </a>
+          </Link>
         </div>
         <div>
-          <a
+          <Link
             href="/blog"
             className="underline underline-offset-4 hover:no-underline"
           >
             Read my blog
-          </a>
+          </Link>
         </div>
         <div className="my-9">
-          <a
+          <Link
             href="/contact"
             className="underline underline-offset-4 hover:no-underline"
           >
             Contact me
-          </a>
+          </Link>
         </div>
       </div>
       <p>&copy; 2025 Keenan. All rights reserved.</p>
