@@ -21,20 +21,22 @@ const blogPosts = [
 ];
 
 interface BlogPostProps {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
 }
 
-export default function BlogPost({ params }: BlogPostProps) {
-  const post = blogPosts.find(post => post.slug === params.slug);
+export default async function BlogPost({ params }: BlogPostProps) {
+  // Find the post based on the dynamic slug
+  const post = blogPosts.find((post) => post.slug === params.slug);
 
+  // Return not found if no post is found
   if (!post) return notFound();
 
   return (
     <main className="max-w-3xl mx-auto px-6 py-12">
       <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-      <p className="text-gray-500 mb-2">By {post.author} • {new Date(post.publishedAt).toLocaleDateString()}</p>
+      <p className="text-gray-500 mb-2">
+        By {post.author} • {new Date(post.publishedAt).toLocaleDateString()}
+      </p>
       <p className="text-lg text-gray-700 leading-relaxed">{post.content}</p>
     </main>
   );
