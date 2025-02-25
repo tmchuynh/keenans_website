@@ -21,7 +21,7 @@ const blogPosts = [
 ];
 
 
-export default function BlogPost({params}) {
+export default function BlogPost({params:string}) {
   const post = blogPosts.find(post => post.slug === params.slug);
 
   if (!post) return notFound();
